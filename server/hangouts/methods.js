@@ -99,8 +99,10 @@ Meteor.methods({
     //tweet new hangout
     tweetHangout(hangout);
 
+    const { hangoutChannels } = StudyGroups.findOne({ _id: group._id }, { fields: { hangoutChannels: 1 }});
+    slackNotification(hangout, "NEW", hangoutChannels);
+    hangoutFacebookNotification(hangout, 'NEW');
 
-    slackNotification(hangout, "NEW");
     return true;
   },
   deleteHangout: function (data) {
@@ -123,8 +125,7 @@ Meteor.methods({
         const actor = Meteor.user()
         if (actor._id === data.hostId) {
 
-          Hangouts.up
-          date({_id: data.hangoutId},
+          Hangouts.update({_id: data.hangoutId},
                           {$set: { visibility: false} });
           return true;
 
