@@ -14,14 +14,14 @@
   p.overflowtext {
     color: $secondary-grey;
   }
-  
+
   a.link {
     text-decoration: underline;
     color: $white;
     white-space: nowrap;
   }
 
-  .panel-default { 
+  .panel-default {
     border: none;
   }
 
@@ -64,7 +64,7 @@
     #hangout-faq-popup {
       color: $white;
     }
-    p { 
+    p {
         @include font-face(400, 1.2em, normal, $white);
         line-height: 1.2;
         width: 100%;
@@ -73,7 +73,7 @@
         @include breakpoint(medium) { width: 70%; }
         @include breakpoint(large) { width: 70%; }
     }
-    a { 
+    a {
         @include font-face(400, 1.2em, normal, $white);
         text-decoration: underline;
     }
@@ -232,7 +232,7 @@
 
     .shadow-effect {
       @include box-shadow(0, 12px, 60, rgba(0, 0, 0, .5));
-      border: 2px solid #fff !important;
+      border: 2px solid $white !important;
     }
 
     %hangout-cards {
@@ -434,6 +434,67 @@
     padding-bottom: 100px;
   }
 
+  .home-testimonials {
+    background: $bg-white;
+    text-align: center;
+
+    h2 {
+      text-align: center;
+      margin: 100px 0px 10px 0px;
+    }
+
+    h3 {
+      @include font-face(700, 18px, bold, $primary-grey);
+    }
+
+    p {
+      padding: 35px;
+    }
+
+    padding-bottom: 100px;
+  }
+
+  .testimonial-bubble {
+    background-color: $bg-lightgrey;
+    border-radius: 25px;
+    margin: 60px 20px;
+    position: relative;
+  }
+
+  /*testimonial-bubble triangle*/
+  .bubble-left:after {
+    content: "";
+    position: absolute;
+    bottom: -25px;
+    right: 50px;
+    border-width: 25px 25px 0;
+    border-style: solid;
+    border-color: $bg-lightgrey transparent;
+  }
+
+  .bubble-right:after {
+    content: "";
+    position: absolute;
+    bottom: -25px;
+    left: 50px;
+    border-width: 25px 25px 0;
+    border-style: solid;
+    border-color: $bg-lightgrey transparent;
+  }
+
+  .testimonial {
+    font-size: 1.20em;
+    line-height: 1.1em;
+    text-align: left;
+  }
+
+  .quote-icons {
+    color: $warm-grey;
+    float: left;
+    padding: 20px 10px 90px 20px;
+    font-size: 1.2em;
+  }
+
   .home-ask {
     padding: 60px 0px;
     text-align: center;
@@ -447,7 +508,7 @@
     margin: 20px auto;
   }
   .search-message {
-      h4, p { 
+      h4, p {
             @include font-face(400, 1em, normal, $white);
       }
   }
@@ -467,9 +528,56 @@
           @include breakpoint(xmedium) { width: 49%; }
           @include breakpoint(medium) { width: 49%; }
           @include breakpoint(large) { width: 33%; }
-         
+
       }
       }
-      
+
+  }
+
+  .statistic-row {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 300px;
+    margin-bottom: 30px;
+  }
+
+  .statistic-circle {
+    width: 250px;
+    height: 250px;
+
+    border: 10px solid white;
+    border-radius: 50%;
+    margin: 0.5em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .statistic-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    > p {
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+
+      &.total {
+        font-size: 4em;
+        font-weight: bold;
+      }
+
+      &.category {
+        font-size: 2em;
+      }
+    }
   }
 }

@@ -14,6 +14,10 @@
   &:hover { background: $cta-blue;}
 }
 
+.btn-full-width {
+    width: 100%;
+}
+
 .btn-success.btn-outline {
   color: $success-green;
 }
@@ -116,8 +120,8 @@
   @include font-face(700, 15px, bold, $bg-white);
   background-color: $cta-blue;
   display: block;
-  height: 36px;
   margin: 10px auto;
+  white-space: normal;
 
   &:hover {
     color: $white;
@@ -130,6 +134,12 @@
   &.btn-success {
     background: $success-green;
   }
+}
+
+.btn-continue {
+    background: $success-green;
+    @include font-face(700, 18px, bold, $bg-white);
+    height: 100%;
 }
 
 .btn-leave {
@@ -167,7 +177,7 @@
   color: $white;
 
   &.btn-unlike {
-    color: $cta-blue;
+    color: $cta-red;
   }
 
   &.btn-like {
@@ -209,6 +219,10 @@ li.delete-hangout, li.edit-hangout {
   }
 }
 
+.delete-hangout.btn.btn-cb2.btn-danger {
+  color: $white;
+}
+
 #btn-load-more, #load-more-learnings {
   color: $cta-blue;
   margin: 10px 0;
@@ -241,7 +255,9 @@ li.delete-hangout, li.edit-hangout {
   max-width: 340px;
 }
 #createGroupButton, .btn-createGroup-notLoggedIn {
-  margin: 10px auto;
+  display:inline;
+  margin: 0 2%;
+  border: 1px solid white;
 }
 .btn-clear {
   width: 100%;
@@ -259,4 +275,8 @@ li.delete-hangout, li.edit-hangout {
   background: $success-green;
   margin: 0 auto;
   max-width: 340px;
+}
+
+.btn-load-more {
+    margin: 20px auto;
 }

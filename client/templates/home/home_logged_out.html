@@ -1,17 +1,41 @@
 <template name="homeLoggedOut">
   <div class="section home-top">
     <div class="container">
+      <div class="statistic-row">
+        <div class="statistic-circle">
+          <div class="statistic-content">
+            <p class="total">{{ instance.hangoutsCount.get }}</p>
+            <p class="category">{{_ "hangouts_organized"}}</p>
+          </div>
+        </div>
+        <div class="statistic-circle">
+          <div class="statistic-content">
+            <p class="total">{{ instance.learningsCount.get }}</p>
+            <p class="category">{{_ "learnings_reported"}}</p>
+          </div>
+        </div>
+        <div class="statistic-circle">
+          <div class="statistic-content">
+            <p class="total">{{ instance.studyGroupCount.get }}</p>
+            <p class="category">{{_ "study_groups"}}</p>
+          </div>
+        </div>
+        <div class="statistic-circle">
+          <div class="statistic-content">
+            <p class="total">{{ instance.discussionCount.get }}</p>
+            <p class="category">{{_ "discussions"}}</p>
+          </div>
+        </div>
+      </div>
       <div class="row">
         <div class="col-md-12">
 
           <div id="intro">
             <h2>Learn and chat about code!</h2>
-            <p class="intro">CodeBuddies is a community of 3600+ code learners who help each other through conversations on <strong>Slack</strong> and peer-to-peer organized <strong>study groups</strong> and <strong>virtual hangouts</strong>.</p>
-            <p>The project is free, <a href="https://github.com/codebuddies/codebuddies" target="_blank" class="link">open-sourced</a>, and built by a fantastic team of core volunteer contributors.</p>
+            <p class="intro">CodeBuddies is a community of 4000+ code learners who help each other through conversations on <strong>Slack</strong> and peer-to-peer organized <strong>study groups</strong> and <strong>virtual hangouts</strong>.</p>
+            <p>This project is free and <a href="http://opencollective.com/codebuddies" target="_blank" class="link">transparent on Open Collective</a>, non-profit, <a href="https://github.com/codebuddies/codebuddies" target="_blank" class="link">open-sourced</a>, and powered by a fantastic team of core volunteer <a href="/about" class="link">contributors</a>.</p>
             <div class="join-slack">
-              <div class="slack-invite">
-                <script async defer src="https://codebuddiesmeet.herokuapp.com/slackin.js?large"></script>
-              </div>
+              <p>Get your Slack invite <a href="https://codebuddiesmeet.herokuapp.com" class="link" target="_blank">here</a>.</p>
               <p>Sign in with <a href="#" class="signIn link">Slack</a> or <a href="#" class="signInGithub link">Github</a>.
               <br />If Slack, sign in to the <strong>codebuddies</strong>.slack.com team.</p>
             </div>
@@ -46,7 +70,7 @@
       <div class="row" style="margin: 40px 0;">
         <div class="col-md-4 align-center">
           <div id="card-silent" class="hangout-card-homepage">
-            <h3><i class="fa fa-microphone-slash text-danger-color type"></i> Silent Hangout</h3>
+            <h3><i class="fas fa-microphone-slash text-danger-color type"></i> Silent Hangout</h3>
 
             <div class="hangout-image">
               <div class="hangout-image-inner">
@@ -56,7 +80,7 @@
 
             <div class="hangout-details">
               <div class="hangout-details-inner">
-                <i class="fa fa-microphone-slash"></i>
+                <i class="fas fa-microphone-slash"></i>
                 <table>
                   <tr>
                     <td class="left">Video</td>
@@ -82,7 +106,7 @@
         </div>
         <div class="col-md-4 align-center">
           <div id="card-teach" class="hangout-card-homepage">
-            <h3><i class="fa fa-user text-warning-color type"></i> Teaching Hangout</h3>
+            <h3><i class="fas fa-user text-warning-color type"></i> Teaching Hangout</h3>
 
             <div class="hangout-image">
               <div class="hangout-image-inner">
@@ -92,7 +116,7 @@
 
             <div class="hangout-details">
               <div class="hangout-details-inner">
-                <i class="fa fa-user"></i>
+                <i class="fas fa-user"></i>
                 <table>
                   <tr>
                     <td class="left">Video</td>
@@ -115,7 +139,7 @@
         </div>
         <div class="col-md-4 align-center">
           <div id="card-collaborate" class="hangout-card-homepage">
-            <h3><i class="fa fa-users text-warning-color type"></i> Collaboration Hangout</h3>
+            <h3><i class="fas fa-users text-warning-color type"></i> Collaboration Hangout</h3>
 
             <div class="hangout-image">
               <div class="hangout-image-inner">
@@ -125,7 +149,7 @@
 
             <div class="hangout-details">
               <div class="hangout-details-inner">
-                <i class="fa fa-users"></i>
+                <i class="fas fa-users"></i>
                 <table>
                   <tr>
                     <td class="left">Video</td>
@@ -202,16 +226,67 @@
     </div>
   </div>
 
+  <div class="section home-testimonials">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Testimonials</h2>
+          <p class="align-center">Don't just take our word for it; these are what some of our members
+            <a href="https://medium.com/codebuddies/codebuddies-community-survey-results-really-insightful-commentary-from-yall-8dcb36965d71" target="_blank">
+              have said anonymously</a> about CodeBuddies.</p>
+          <div class="col-md-6">
+              <div class="testimonial-bubble bubble-left">
+                <div class="quote-icons">
+                  <i class="fa fa-quote-left"></i><i class="fa fa-quote-right"></i>
+                </div>
+                <p class="testimonial">CodeBuddies is a place where people of all kinds meet up to advance their jobs, skills, and knowledge as a team.</p>
+              </div>
+              <div class="testimonial-bubble bubble-left">
+                <div class="quote-icons">
+                  <i class="fa fa-quote-left"></i><i class="fa fa-quote-right"></i>
+                </div>
+                <p class="testimonial">CodeBuddies has helped me by giving me a place to talk about coding without being judged by who I am and what languages and skills I’m learning.</p>
+              </div>
+              <div class="testimonial-bubble bubble-left">
+                <div class="quote-icons">
+                  <i class="fa fa-quote-left"></i><i class="fa fa-quote-right"></i>
+                </div>
+                <p class="testimonial">I loved seeing all the positivity, especially when I was having a hair-pulling-out day. It’s great to see people helping and giving advice and genuinely being good and nice people to their fellow developers.</p>
+              </div>
+          </div>
+          <div class="col-md-6">
+            <div class="testimonial-bubble bubble-right">
+              <div class="quote-icons">
+                <i class="fa fa-quote-left"></i><i class="fa fa-quote-right"></i>
+              </div>
+              <p class="testimonial">An active Slack community with a team that genuinely cares. Useful for those learning how to code.</p>
+            </div>
+            <div class="testimonial-bubble bubble-right">
+              <div class="quote-icons">
+                <i class="fa fa-quote-left"></i><i class="fa fa-quote-right"></i>
+              </div>
+              <p class="testimonial">Very helpful to meet people also looking to improve their skills. Helpful also if you are stuck on a concept or piece of code as it can be posted as snippet for others to help resolve issue.</p>
+            </div>
+            <div class="testimonial-bubble bubble-right">
+              <div class="quote-icons">
+                <i class="fa fa-quote-left"></i><i class="fa fa-quote-right"></i>
+              </div>
+              <p class="testimonial">I work remotely with a couple international teams (much smaller US team) and it’s nice to have found some like minded people with regular hours.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="section home-ask">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <h2>Start learning with us now!</h2>
           <div class="join-slack">
-            <div class="slack-invite">
-              <script async defer src="https://codebuddiesmeet.herokuapp.com/slackin.js?large"></script>
-            </div>
-            <p>Sign in with <a href="#" class="signIn link">Slack</a> or <a href="#" class="signInGithub link">Github</a>.
+            <p>Get your Slack invite <a href="https://codebuddiesmeet.herokuapp.com" class="link" target="_blank">here</a>.
+            <br />Sign in with <a href="#" class="signIn link">Slack</a> or <a href="#" class="signInGithub link">Github</a>.
             <br />Select <strong>CodeBuddies</strong> or sign into the <strong>codebuddies</strong>.slack.com team.</p>
           </div>
         </div>
